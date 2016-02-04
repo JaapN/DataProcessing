@@ -1,0 +1,25 @@
+Design Data Processing
+
+Questions
+1.	Find a visualization online and answer the following questions pertaining to that visualization. Attach the visualization as a screenshot in your submission.
+ http://cdn2.hubspot.net/hub/53/hubfs/united-states-wind-map.png?t=1454596689254&width=669&height=402
+Source: http://blog.hubspot.com/marketing/great-data-visualization-examples
+
+2.	Consider Bertin’s characterization of visual variables (position, size, shape, value, color, orientation, and texture). Pick 2 of Bertin’s visual variables, and discuss them in relation to your visualization.
+-	Value: Gezien kan worden dat de windkracht selectief in waarde is. Een lichtere/hogere waarde impliceert immers een hogere windkracht. Dit laatste is een associatie tussen de waarde (het visuele) en het natuurwetenschappelijke (windkracht). Dit geeft dus ook de rankorde aan (order).
+-	Position: Door de positie van de waarden die de kaart/vorm construeren (associative) omdat deze lagere waarden tegen elkaar aan liggen, kan gesteld worden op welke plek de windkracht een rol speelt. Er kan dus onderscheid (selective) gemaakt worden tussen plaatsen door de positie van de waarden.
+
+3.	Do you agree that visualization is a functional art? Explain.
+De visualisatie is een functioneel kunstwerk, omdat het met de benoemde visuele variabelen de boodschap weet over te brengen op welke plaatsen in de Verenigde Staten er een sterke windkracht is, en ongeveer hoe sterk deze windkracht is. Ook door de oriëntatie van de lijnen is het duidelijk in welke lijnen de wind waait (al is het niet in 180 graden duidelijk of het de ene of andere richting is). In tekst wordt eveneens enige informatie geleverd, maar dit is niet geheel onderdeel van de visualisatie.
+
+! Deze visualisatie behoort in feite in realtime te werken.
+In dat geval zou het zeer functioneel zijn en slagen in hetgeen dat het beoogt te doen. De snelheid van de lijnen geeft dan de windkracht en richting aan. Er kan direct geschat worden hoe hard de wind waait en in welke richting de wind waait in elke locatie. Zonder het gebruik van getallen is het desalniettemin gelijk duidelijk wat er gebeurt.
+
+4.	Ask yourself what the designer is trying to convey and think of three to four possible tasks this visualization should help you with. Does the visualization achieve any of your tasks? (To view an example, see Albert Cairo, pages 26-¬28.)
+De visualisatie weet de windkracht (en windrichting) per locatie in de Verenigde Staten in kaart te brengen.
+-	Het geeft de windkracht aan per locatie. Bij benadering lukt dit vrij goed. Het geeft veel beter weer dan een tabel wat de windkracht is. Maar het is niet heel precies: een tabel/cijfer geeft precieze informatie, terwijl het aflezen van een dergelijke afbeelding een schatting oplevert.
+-	Het moet mogelijk zijn de windkracht tussen plaatsen te vergeleken. Dit is mogelijk bij benadering.
+-	Het poogt de richting van de wind weer te geven, maar slaagt hier niet geheel in.
+
+! Deze visualisatie behoort in feite in realtime te werken:
+In dat geval zou het zeer functioneel zijn en slagen in hetgeen dat het beoogt te doen. De snelheid van de lijnen geeft dan de windkracht en richting aan. Er kan direct geschat worden hoe hard de wind waait en in welke richting de wind waait in elke locatie. Zonder het gebruik van getallen is het desalniettemin gelijk duidelijk wat er gebeurt.

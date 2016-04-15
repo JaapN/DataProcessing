@@ -33,8 +33,8 @@ function createTransform(domain, range)
 // calculate new date function
 dom_min = date[0].getTime();
 dom_max = date[364].getTime();
-ran_min = 700;
-ran_max = 120;
+ran_min = 120;
+ran_max = 700;
 date_function = createTransform([dom_min, dom_max], [ran_min, ran_max]);
 
 // calculate date screen coordinates
@@ -71,12 +71,12 @@ for (var count = 0; count < temperature.length; count++)
 var canvas = document.getElementById('mycanvas');
 var ctx = canvas.getContext('2d');
 
-// drawing lines, rectangles, circles and text
-ctx.clearRect(50,50,700,400);
-
 // axis labels
-ctx.font = "20px serif";
-ctx.fillText("Average temperature (0.1 celcius)", 10, 40);
+ctx.font = "20px times new roman";
+ctx.save();
+ctx.rotate((Math.PI/180)*90);
+ctx.fillText("Degree Celcius", 180, -20);
+ctx.restore();
 ctx.fillText("Month", 720, 455);
 
 // title
@@ -91,57 +91,57 @@ ctx.fillText("http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi", 5,
 for (var count = 0; count < 3; count++)
 {
     ctx.font = "22px serif";
-    ctx.fillText("300", 50, 70);
+    ctx.fillText("30", 50, 70);
     ctx.beginPath();
     ctx.moveTo(100,60);
     ctx.lineTo(90,60);
     ctx.stroke();
-    ctx.fillText("260", 50, 108);
+    ctx.fillText("26", 50, 108);
     ctx.beginPath();
     ctx.moveTo(100,99);
     ctx.lineTo(90,99);
     ctx.stroke();
-    ctx.fillText("220", 50, 146);
+    ctx.fillText("22", 50, 146);
     ctx.beginPath();
     ctx.moveTo(100,138);
     ctx.lineTo(90,138);
     ctx.stroke();
-    ctx.fillText("180", 50, 184);
+    ctx.fillText("18", 50, 184);
     ctx.beginPath();
     ctx.moveTo(100,177);
     ctx.lineTo(90,177);
     ctx.stroke();
-    ctx.fillText("140", 50, 222);
+    ctx.fillText("14", 50, 222);
     ctx.beginPath();
     ctx.moveTo(100,216);
     ctx.lineTo(90,216);
     ctx.stroke();
-    ctx.fillText("100", 50, 260);
+    ctx.fillText("10", 50, 260);
     ctx.beginPath();
     ctx.moveTo(100,255);
     ctx.lineTo(90,255);
     ctx.stroke();
-    ctx.fillText("60", 60, 298);
+    ctx.fillText("6", 60, 298);
     ctx.beginPath();
     ctx.moveTo(100,294);
     ctx.lineTo(90,294);
     ctx.stroke();
-    ctx.fillText("20", 60, 336);
+    ctx.fillText("2", 60, 336);
     ctx.beginPath();
     ctx.moveTo(100,333);
     ctx.lineTo(90,333);
     ctx.stroke();
-    ctx.fillText("-20", 50, 374);
+    ctx.fillText("-2", 50, 374);
     ctx.beginPath();
     ctx.moveTo(100,372);
     ctx.lineTo(90,372);
     ctx.stroke();
-    ctx.fillText("-60", 50, 412);
+    ctx.fillText("-6", 50, 412);
     ctx.beginPath();
     ctx.moveTo(100,411);
     ctx.lineTo(90,411);
     ctx.stroke();
-    ctx.fillText("-100", 40, 450);
+    ctx.fillText("-10", 40, 450);
     ctx.beginPath();
     ctx.moveTo(100,450);
     ctx.lineTo(90,450);
@@ -234,6 +234,61 @@ ctx.beginPath();
 ctx.moveTo(date_screen[0],temperature_screen[0]);
 for (var count = 0; count < temperature_screen.length; count++)
 {
+    ctx.setLineDash([3, 1]);
+    ctx.lineDashOffset = 0;
+    ctx.strokeStyle = '#ff0000';
+    ctx.lineWidth = 2;
     ctx.lineTo(date_screen[count], temperature_screen[count]);
 }
 ctx.stroke();
+
+/**
+ * PART 2
+ * !!!
+ * Interactivity
+ * !!!
+ */
+var canvas2 = document.getElementById('mysecondcanvas');
+var ctx2 = canvas2.getContext('2d');
+
+// draw the crosshairs
+canvas2.addEventListener("mousemove", function(event)
+{
+    ctx2.clearRect(0, 0, 580, 390);
+
+    var x_pos = event.clientX - 128;
+    var y_pos = event.clientY - 68;
+
+    // draw horizontal line
+    ctx2.beginPath();
+    ctx2.moveTo(0, y_pos);
+    ctx2.lineTo(580, y_pos);
+
+    // draw vertical line
+    ctx2.moveTo(x_pos, 390);
+    ctx2.lineTo(x_pos, 0);
+    ctx2.stroke();
+});
+
+// extra credit - tooltip
+canvas2.addEventListener("mousemove", function(event)
+{
+    // get positions
+    var x_pos = event.clientX - 128;
+    var y_pos = event.clientY - 68;
+
+    // compute new functions
+    var transformDate = createTransform([0, 580], [0, 364]);
+    var transformTemp = createTransform([0, 390], [30, -10]);
+
+    // calculate precise values
+    var dateValue = date[Math.ceil(transformDate(x_pos))];
+    var tempValue = transformTemp(y_pos);
+
+    ctx.clearRect(20, 33, 750, 20);
+    ctx.font = "13px cambria";
+    ctx.fillText("Date: ", 90, 50);
+    ctx.fillText(dateValue, 125, 50);
+    ctx.fillText("Temperature: ", 550, 50);
+    ctx.fillText(tempValue, 630, 50);
+});

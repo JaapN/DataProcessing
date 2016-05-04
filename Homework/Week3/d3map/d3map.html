@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Problem 2 d3map
+    </title>
+  </head>
+
+  <body>
+    <div id="WorldPopDensity" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b>Population Density World Map</b></font></div>
+
+    <!-- Datamaps Source -->
+    <script src="http://datamaps.github.com/scripts/datamaps-all.js"></script>
+    <script src="d3map.js"></script>
+
+    <div>
+      <font face='verdana' size='2'><b>Map source: https://github.com/tillnagel/unfolding/blob/master/data/data/countries-population-density.csv<br>
+      Colour source: http://colorbrewer2.org/</b> (darker colours have been used to distinguish countries with low population density from the background)</font>
+
+      <br></br>
+
+      <font face='cambria' size='3'>
+        When scrolling over a country, information about the country name, code and population density will pop up.<br>
+        The borders of a country will get solid as well, which will make it clear which country you are looking at.<br></br>
+
+        There are seven colours to signify what the population density for the respective country is.<br>
+        Seven seems a high enough number to represent all countries in the world, yet not quite too high for a colour to be meaningless or confusing on the first sight.
+        Also based on an Excel data analysis, a relatively high number of classes seemed more appropriate.<br>
+        It is a multi hue scheme in order to separate between high and low density easier than with a single hue scheme. As seven classes are being used, a distinguishing scheme appears to be more appropriate.
+        However, the colours are still similar in hue.<br>
+        The colour-classes are chosen based on a spread of the population density values as an Microsoft Excel graph, with varying reach values for the y-axis. The median value is 82, however the average is 413.<br>
+        <br>
+        The colour-classes are as follows:<br>
+        <img src='http://i.imgur.com/Oy5ASK9.png' alt='Color Scheme Image'></img><br>
+        - Extremely low, white-orange (#fed976): population density between 0 and 15.<br>
+        - Very low, light-orange (#feb24c): population density between 15 and 50.<br>
+        - Low, orange (#fd8d3c): population density between 50 and 70.<br>
+        - Medium, orange-red (#fc4e2a): population density between 70 and 100.<br>
+        - High, red (#e31a1c): population density between 100 and 250.<br>
+        - Very high, dark red (#bd0026): population density between 250 and 700.<br>
+        - Extremely high, black-red (#800026): population density higher than (or equal to) 700.<br><br>
+
+        - Very light yellow is the default fill (#fdedba), if there is no data about this country.<br>
+        Usually this means the value would be extremely low, so that is why I have chosen to pick a very light colours to represent these countries. However, be aware that this is merely an assumption!<br>
+
+        <br>
+        The colours are hierarchical in design, which means similar in hue: a darker/stronger colour tends to specify a higher population density number than a lighter colour.
+        This is intuitive to understand.
+      </font>
+    </div>
+
+  </body>
+</html>

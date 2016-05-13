@@ -9,34 +9,31 @@ body {
   shape-rendering: crispEdges;
 }
 
-.x.axis path {
-  display: none;
+#DeBilt {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
 }
 
-.line {
+#Vlissingen {
   fill: none;
   stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
-.crosshair {
-      fill: none;
-      stroke-width: 1px;
+.focusLine {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
 }
 
-#crosshairX {
-  stroke: red;
-  stroke-width: 1px;
-}
-
-#crosshairY {
-  stroke: red;
-  stroke-width: 1px;
+.focusCircle {
+    fill: limegreen;
 }
 
 .overlay {
   fill: none;
-    stroke: black;
-    pointer-events: all;
-    stroke-width: 2px;
+  stroke: none;
+  pointer-events: all;
+  stroke-width: 2px;
 }

@@ -39,10 +39,6 @@ var label = svg.append("text")
 var label1 = svg.append("text");
 var label2 = svg.append("text");
 
-// create crosshair
-var crosshair = svg.append("g")
-    .style("display", "none")
-
 // load the files
 d3_queue.queue()
   .defer(d3.json, "DataStorage/data_d3line_DeBilt.json")
@@ -175,9 +171,9 @@ d3_queue.queue()
               .attr('x2', x(xDomain[1])).attr('y2', yVal);
 
           // define label for crosshairs file1
-          label1.attr("x", xVal + 10).attr("y", yVal).style("text-anchor", "center");
+          label1.attr("x", xVal + 10).attr("y", yVal + 13).style("text-anchor", "center");
           label1.text(function() {
-            return "x=" + formatDate(x.invert(xVal)) + ", y=" + y.invert(yVal);
+            return "De Bilt: x=" + formatDate(x.invert(xVal)) + ", y=" + y.invert(yVal);
           });
 
           // file 2
@@ -203,9 +199,9 @@ d3_queue.queue()
               .attr('x2', x(xDomain[1])).attr('y2', yVal2);
 
           // define label for crosshairs file2
-          label2.attr("x", xVal2 + 10).attr("y", yVal2).style("text-anchor", "center");
+          label2.attr("x", xVal2 + 10).attr("y", yVal2 - 7).style("text-anchor", "center");
           label2.text(function() {
-            return "x=" + formatDate(x.invert(xVal2)) + ", y=" + y.invert(yVal2);
+            return "Vlissingen: x=" + formatDate(x.invert(xVal2)) + ", y=" + y.invert(yVal2);
           });
 
           // put a text label in the lower-right corner

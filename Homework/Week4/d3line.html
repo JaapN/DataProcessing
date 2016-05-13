@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
   <title>
     Line Graph average wind velocity, temperature and cloudiness in De Bilt and Vlissingen, 2015
@@ -5,11 +6,10 @@
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="d3line.css"/>
-    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
 </head>
 
 <div class='Title'>
-  <font face='cambria' color='black' size='4'>Monthly average wind velocity (in 0.1 m/s), temperature (0.1 degrees Celcius) and cloudiness (coverage degree in eighths) in De Bilt and Vlissingen, 2015</font>
+  <font face='cambria' color='black' size='4'><b>Monthly average wind velocity (in 0.1 m/s), temperature (0.1 degrees Celcius) and cloudiness (coverage degree in eighths) in De Bilt and Vlissingen, 2015</b></font>
 </div>
 
 <div class='Legend'>
@@ -31,5 +31,14 @@
     <br>
     <font face='arial' color='gray' size='2'>Source: http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi</font>
   </div>
+
+  <div id="about">
+		<br>
+		<p><strong>The line graph shows average temperature, wind velocity and cloudiness data of De Bilt and Vlissingen in 2015.</strong></p>
+		<p>This linegraph shows the monthly average temperature (0.1 Celcius), wind velocity (0.1 m/s) or cloudiness (coverage degree in eighths) of <font color='red'>De Bilt (red)</font> and <font color='steelblue'>Vlissingen (blue)</font> in 2015 against time (date). Start by clicking the dependent variables above and see what trends you can identify.</p>
+		<p>The data is from the KNMI website for
+			 <a href="http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi" target="_blank">Climatology</a> (http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi).</p>
+		<p>Built by Jaap Nieuwenhuizen</p>
+	</div>
 
 </body>

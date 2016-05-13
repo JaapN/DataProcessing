@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    Line Graph average wind velocity, temperature and cloudiness in De Bilt and Vlissingen, 2015
+  </title>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="d3lineExtended.css"/>
+</head>
+
+<div class='Title'>
+  <font face='cambria' color='black' size='5'><b>Monthly average wind velocity (in 0.1 m/s), temperature (0.1 degrees Celcius) and cloudiness (coverage degree in eighths) in De Bilt and Vlissingen, 2015</b></font>
+</div>
+
+<div class='Legend'>
+  <font face='cambria' color='red' size='3'>RED = De Bilt</font>;
+  <font face='cambria' color='steelblue' size='3'>BLUE = Vlissingen</font>
+</div>
+
+<body>
+  <div class="script src">
+    <script src="d3lineExtended.js"></script>
+  </div>
+
+  <div id='menu'>
+    <br>
+    <font face='cambria' size='4'><b>Click on a dependent variable to have it plotted on the y-axis against time (month)</b></font>
+    <br>
+    <li><font face='cambria' size='3'><button onclick="graphTemperature()">Temperature</button></font></li>
+    <li><font face='cambria' size='3'><button onclick="graphWind()">Wind Velocity</button></font></li>
+    <li><font face='cambria' size='3'><button onclick="graphCloud()">Cloudiness</button></font></li>
+  </div>
+
+  <div class="name">
+    <br>
+    <b>Jaap Nieuwenhuizen, Week 4</b>
+  </div>
+
+  <div class="source">
+    <font face='arial' color='gray' size='2'>Source: http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi</font>
+  </div>
+
+	<div id="about">
+		<br>
+		<p><strong>The line graph shows average temperature, wind velocity and cloudiness data of De Bilt and Vlissingen in 2015.</strong></p>
+		<p>This linegraph shows the monthly average temperature (0.1 Celcius), wind velocity (0.1 m/s) or cloudiness (coverage degree in eighths) of <font color='red'>De Bilt (red)</font> and <font color='steelblue'>Vlissingen (blue)</font> in 2015 against time (date). Start by clicking the dependent variables above and see what trends you can identify.</p>
+		<p>The data is from the KNMI website for
+			 <a href="http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi" target="_blank">Climatology</a> (http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi).</p>
+		<p>Built by Jaap Nieuwenhuizen</p>
+	</div>
+</body>
+</html>

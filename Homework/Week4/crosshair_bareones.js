@@ -1,4 +1,9 @@
 /*
+// create crosshair
+var crosshair = svg.append("g")
+    .style("display", "none")
+
+
 .crosshair {
       fill: none;
       stroke-width: 1px;

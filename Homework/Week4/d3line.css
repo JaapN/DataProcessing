@@ -1,5 +1,10 @@
 body {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
+  background-color: #eee;
+}
+
+#about {
+  font: 14px cambria;
 }
 
 .axis path,

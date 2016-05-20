@@ -4,6 +4,7 @@
  * Jaap Nieuwenhuizen
  */
 
+// click on map HPI
 function getMapHPI()
 {
   d3.select("#graph_WellB_LifeE").style('display', 'none');
@@ -15,6 +16,7 @@ function getMapHPI()
   d3.select("#WorldHPIMap").style("display", "");
 }
 
+// click on map footprint
 function getMapFoot()
 {
   d3.select("#graph_WellB_LifeE").style('display', 'none');
@@ -26,6 +28,7 @@ function getMapFoot()
   d3.select("#WorldFootMap").style("display", "");
 }
 
+// click on map well-being
 function getMapWellB()
 {
   d3.select("#graph_WellB_LifeE").style('display', 'none');
@@ -37,6 +40,7 @@ function getMapWellB()
   d3.select("#WorldWellBMap").style("display", "");
 }
 
+// click on map life expectancy
 function getMapLifeE()
 {
   d3.select("#graph_WellB_LifeE").style('display', 'none');
@@ -48,6 +52,7 @@ function getMapLifeE()
   d3.select("#WorldLifeEMap").style("display", "");
 }
 
+// click on graph wellbeing - life expectancy
 function graph_WellB_LifeE()
 {
   d3.select("#WorldHPIMap").style("display", "none");
@@ -59,6 +64,7 @@ function graph_WellB_LifeE()
   d3.select("#graph_WellB_LifeE").style("display", "");
 }
 
+// click on graph gdp - foodprint
 function graph_GDP_FootP()
 {
   d3.select("#WorldHPIMap").style("display", "none");
@@ -70,6 +76,7 @@ function graph_GDP_FootP()
   d3.select("#graph_GDP_FootP").style("display", "");
 }
 
+// click on table
 function showTable()
 {
   d3.select("#graph_WellB_LifeE").style('display', 'none');
@@ -1057,7 +1064,7 @@ function(error, data) {
            "Governance Rank: " + data.data.governanceRank + "\n" +
            "Sub-region: " + data.data.subregion + "\n" +
            "Fill-key: " + data.data.fillKey + "\n"
-          ); // alerts about which country you clicked on
+          ); // alerts about which country you clicked on    
        });
        $("#WorldFootMap").on('map-click', function(event, data) {
            alert( "Clicked on: " + data.geography.id + "\n" + "\n" +

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      D3LinkedViews
+    </title>
+  </head>
+
+  <body>
+    <!-- Datamaps Source and js file -->
+    <script src="http://datamaps.github.com/scripts/datamaps-all.js"></script>
+    <script src="d3linkedviews.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="d3linkedviews.css"/>
+
+    <div id='menu'>
+      <br>
+      <font face='cambria' size='4'><b>Menu:</b></font>
+      <br>
+      <li><font face='cambria' size='3'><button onclick="getMap()">HPI World Map</button></font></li>
+      <li><font face='cambria' size='3'><button onclick="graph_WellB_LifeE()">Graph: Well-being against Life Expectancy</button></font></li>
+    </div>
+
+    <div class="name">
+      <br>
+      <b>Jaap Nieuwenhuizen, Week 5</b>
+    </div>
+
+    <div id="WorldDataMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b></b></font></div>
+    <svg id="graph_WellB_LifeE"></svg>
+
+    <div id='about'>
+      <font face='verdana' size='2'>
+      <b>Data:</b> http://www.happyplanetindex.org/data/<br>
+      <b>Map:</b> https://github.com/tillnagel/unfolding/blob/master/data/data/countries-population-density.csv<br>
+      <b>Colour schemes:</b> http://colorbrewer2.org/</font>
+      <br></br>
+
+      <font face='cambria' size='3'>
+        When scrolling over a country on the map, information about the country name and HPI will pop up.<br>
+        The borders of a country will get green as well, which will make it clear which country you are looking at.<br></br>
+
+        The new HPI results show the extent to which 151 countries across the globe produce long, happy and sustainable lives for the people that live in them.<br>
+        The overall index scores rank countries based on their efficiency, how many long and happy lives each produces per unit of environmental output.<br>
+        <br>
+        Each of the three component measures - life expectancy, experienced well-being and Ecological Footprint - is given a traffic-light score based on thresholds for good (green), middling (amber) and bad (red) performance. <br>
+        These scores are combined to an expanded six-colour traffic light for the overall HPI score, where, to achieve bright green - the best of the six colours, a country would have to perform well on all three individual components.<br>
+        <br>
+        The scores for the HPI and the component measures can be viewed in map or graph-form. By clicking on any individual country in the map you can explore its results in more detail in its graph.<br>
+
+        - See more at: http://www.happyplanetindex.org/data/#sthash.oJFGVUBz.dpuf<br><br>
+        Well-being:	Arithmetic mean of individual responses to the Ladder of Life question in the Gallup World Poll.  Latest data for each country as at February 2012.<br>
+        Life Expectancy:	2011 data taken from UNDP Human Development Report 2011.<br>
+        Footprint:	2008 data taken from Global Footprint Network for 142 countries. <b>nef</b> estimates for 9 countries (see report appendix for further details).<br>
+        Population:	2010 data sourced from World Bank World Development Indicators.<br>
+        Governance:	Rank of the simple average of all six World Governance Indicators countries based on latest data available for each on 02 June 2012.<br>
+        GDP per capita:	Taken from World Bank World Development Indicators 2010 ($PPP Current prices).  For Bahrain, Iran, Libya, Djibouti and Qatar, Cuba, Kuwait and Zimbabwe 2010 data were not available, so the most uptodate WDI data available were used.<br>
+        <br><br>
+      </font>
+    </div>
+
+  </body>
+</html>

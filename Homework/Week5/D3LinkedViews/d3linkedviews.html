@@ -9,17 +9,27 @@
   <body>
     <!-- Datamaps Source and js file -->
     <script src="http://datamaps.github.com/scripts/datamaps-all.js"></script>
-    <script src="d3linkedviews.js"></script>
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="d3linkedviews.js"></script>
     <link rel="stylesheet" type="text/css" href="d3linkedviews.css"/>
+
+    <div id='title'>
+      <font face='cambria' size='7'><b>D3 Linked Views</b></font>
+    </div>
 
     <div id='menu'>
       <br>
-      <font face='cambria' size='4'><b>Menu:</b></font>
+      <font face='cambria' size='5'><b>Menu:</b></font>
       <br>
-      <li><font face='cambria' size='3'><button onclick="getMap()">HPI World Map</button></font></li>
+      <li><font face='cambria' size='3'><button onclick="getMapHPI()">HPI World Map</button></font></li>
+      <li><font face='cambria' size='3'><button onclick="getMapFoot()">Ecological Footprint (gha/capita) World Map</button></font></li>
+      <li><font face='cambria' size='3'><button onclick="getMapWellB()">Well-being (0-10) World Map</button></font></li>
+      <li><font face='cambria' size='3'><button onclick="getMapLifeE()">Life expectancy (years) World Map</button></font></li>
       <li><font face='cambria' size='3'><button onclick="graph_WellB_LifeE()">Graph: Well-being against Life Expectancy</button></font></li>
+      <!--
+      <li><font face='cambria' size='3'><button onclick="graph_GDP_FootP()">Graph: Ecological Footprint against GDP/Capita</button></font></li>
+      -->
+      <li><font face='cambria' size='3'><button onclick="showTable()">Table</button></font></li>
     </div>
 
     <div class="name">
@@ -27,8 +37,16 @@
       <b>Jaap Nieuwenhuizen, Week 5</b>
     </div>
 
-    <div id="WorldDataMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b></b></font></div>
-    <svg id="graph_WellB_LifeE"></svg>
+    <div id="WorldHPIMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b>HPI World Map</b></font></div>
+    <div id="WorldFootMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b>Ecological Footprint (gha/capita) World Map</b></font></div>
+    <div id="WorldWellBMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b>Well-being (0-10) World Map</b></font></div>
+    <div id="WorldLifeEMap" style="height: 800px; width: 1300px" align='center'><font face='cambria' size='7'><b>Life expectancy (years) World Map</b></font></div>
+    <div id="graph_WellB_LifeE" style="height: 700px; width: 1160px" align='center'><font face='cambria' size='6'><b>Graph of Well-Being (0-10) against Life Expectancy (years)</b></font><br></div>
+    <!--
+    <div id="graph_GDP_FootP" style="height: 700px; width: 1160px" align='center'><font face='cambria' size='6'><b>Graph of Ecological Footprint (gha/capita) against GDP/capita ($PPP)</b></font><br></div>
+    -->
+    <div id="Table"><br></div>
+    <br>
 
     <div id='about'>
       <font face='verdana' size='2'>
@@ -38,16 +56,16 @@
       <br></br>
 
       <font face='cambria' size='3'>
-        When scrolling over a country on the map, information about the country name and HPI will pop up.<br>
-        The borders of a country will get green as well, which will make it clear which country you are looking at.<br></br>
+        When scrolling over a country on the map, information about the country name and data will pop up.<br>
+        The borders of a country will get cyan coloured as well, which will make it clear which country you are looking at. There is a clear contrast between the used fill colours and cyan.<br></br>
 
         The new HPI results show the extent to which 151 countries across the globe produce long, happy and sustainable lives for the people that live in them.<br>
         The overall index scores rank countries based on their efficiency, how many long and happy lives each produces per unit of environmental output.<br>
         <br>
         Each of the three component measures - life expectancy, experienced well-being and Ecological Footprint - is given a traffic-light score based on thresholds for good (green), middling (amber) and bad (red) performance. <br>
-        These scores are combined to an expanded six-colour traffic light for the overall HPI score, where, to achieve bright green - the best of the six colours, a country would have to perform well on all three individual components.<br>
+        These scores are combined to an expanded five-colour traffic light for the overall HPI score, where, to achieve bright green - the best of the six colours, a country would have to perform well on all three individual components. A gray colour simply means that there is no available data for the respective country.<br>
         <br>
-        The scores for the HPI and the component measures can be viewed in map or graph-form. By clicking on any individual country in the map you can explore its results in more detail in its graph.<br>
+        The scores for the HPI and the component measures can be viewed in map-, graph- and table-form. By clicking on any individual country in the map you can explore its results in more detail.<br>
 
         - See more at: http://www.happyplanetindex.org/data/#sthash.oJFGVUBz.dpuf<br><br>
         Well-being:	Arithmetic mean of individual responses to the Ladder of Life question in the Gallup World Poll.  Latest data for each country as at February 2012.<br>
